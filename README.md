@@ -78,7 +78,7 @@ src/
 └── services/         # API services and utilities
 ```
 
-## 🛠️ Available Scripts
+## Available Scripts
 
 - `pnpm dev` - Start development server with Turbopack
 - `pnpm build` - Create production build
