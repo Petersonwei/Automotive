@@ -21,7 +21,7 @@ const serviceCards = [
   {
     id: 3,
     title: "Custom Solutions",
-    description: "Tailored automotive solutions to meet your specific needs. We work with you to understand your requirements and deliver the best results.",
+    description: "Tailored automotive solutions to meet your specific needs. We work with you to understand your requirements and deliver the best results.\n\nOur experienced team provides personalized attention to every project",
     imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
     buttonText: "Get Started",
     buttonHref: "/services/custom"

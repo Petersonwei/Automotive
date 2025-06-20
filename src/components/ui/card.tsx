@@ -22,7 +22,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div className={`
-      rounded-lg shadow-lg overflow-hidden
+      rounded-lg shadow-lg overflow-hidden min-h-[32rem] flex flex-col
       ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
     `}>
       <div className="relative h-48 w-full">
@@ -34,23 +34,25 @@ export default function Card({
         />
       </div>
       
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-semibold mb-2">
           {title}
         </h3>
         
-        <p className="mb-6 line-clamp-3">
+        <p className="mb-6">
           {description}
         </p>
 
-        <Button
-          href={buttonHref}
-          onClick={onButtonClick}
-          variant="primary"
-          className="w-full"
-        >
-          {buttonText}
-        </Button>
+        <div className="mt-auto">
+          <Button
+            href={buttonHref}
+            onClick={onButtonClick}
+            variant="primary"
+            className="w-full"
+          >
+            {buttonText}
+          </Button>
+        </div>
       </div>
     </div>
   );
