@@ -5,11 +5,11 @@ export default function Home() {
     <main>
       <HeroSection 
         title="Welcome to G Automotive"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum."
+        description="Experience excellence in automotive care. We specialize in comprehensive vehicle services, 
+        from routine maintenance to advanced repairs. Our team of certified technicians combines cutting-edge 
+        technology with years of expertise to keep your vehicle performing at its best. Whether you drive a 
+        family SUV, a luxury sedan, or a rugged pickup, we're committed to providing exceptional service 
+        that you can trust."
         imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
       />
 

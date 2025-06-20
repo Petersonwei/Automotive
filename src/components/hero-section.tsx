@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface HeroSectionProps {
   title: string;
   description: string;
@@ -13,23 +15,22 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative min-h-[80vh] w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url('${imageUrl}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={imageUrl}
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover"
+          quality={90}
+        />
+      </div>
 
-      {/* Dark Overlay - consistent regardless of theme */}
-      <div 
-        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 to-black/60"
-      />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 to-black/60" />
 
-      {/* Content - always white text */}
+      {/* Content */}
       <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
           {title}
