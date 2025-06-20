@@ -1,5 +1,5 @@
-import HeroSection from '@/components/hero-section';
-import CardGrid from '@/components/card-grid';
+import HeroSection from '@/components/HeroSection';
+import CardGrid from '@/components/CardGrid';
 
 const serviceCards = [
   {

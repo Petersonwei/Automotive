@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { text as t } from '@/constants/text';
-import ThemeToggle from './theme-toggle';
+import ThemeToggle from './ThemeToggle';
 import { MdMenu, MdClose } from "react-icons/md";
 
 export default function TopNav() {
