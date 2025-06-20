@@ -24,7 +24,7 @@ export default function Card({
     <div className={`
       rounded-lg shadow-lg overflow-hidden min-h-[32rem] flex flex-col
       ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
-      transition-all duration-200
+      transition-all duration-300 ease-in-out
     `}>
       <div className="relative h-48 w-full">
         <Image
@@ -46,11 +46,7 @@ export default function Card({
 
         <div className="mt-auto">
           <Button
-            href={buttonHref}
-            onClick={() => {
-              if (onButtonClick) onButtonClick();
-              if (buttonHref) return; // Only prevent default if there's no href
-            }}
+            onClick={onButtonClick}
             variant="primary"
             className="w-full"
           >
