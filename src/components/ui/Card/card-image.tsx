@@ -7,7 +7,7 @@ interface CardImageProps {
 
 export default function CardImage({ src, alt }: CardImageProps) {
   return (
-    <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+    <div className="relative w-full h-48">
       <Image
         src={src}
         alt={alt}

@@ -22,11 +22,7 @@ export default function Card({
   isHighlighted = false
 }: CardProps) {
   return (
-    <div className={`
-      rounded-lg shadow-lg overflow-hidden
-      ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
-      transition-all duration-200 hover:shadow-xl
-    `}>
+    <div className="rounded-lg overflow-hidden">
       <CardImage src={imageSrc} alt={title} />
       <CardHeader title={title} />
       <CardBody

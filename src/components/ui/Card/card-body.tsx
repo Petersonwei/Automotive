@@ -15,12 +15,13 @@ export default function CardBody({
 }: CardBodyProps) {
   return (
     <div className="px-6 py-4">
-      <p>
+      <p className="mb-4">
         {description}
       </p>
       <Button
         href={buttonHref}
         onClick={onButtonClick}
+        className="w-full"
       >
         {buttonText}
       </Button>
