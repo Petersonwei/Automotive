@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Card from './ui/card';
 
 interface CardData {
@@ -11,10 +14,23 @@ interface CardData {
 
 interface CardGridProps {
   cards: CardData[];
-  highlightedCardId?: number;
 }
 
-export default function CardGrid({ cards, highlightedCardId }: CardGridProps) {
+export default function CardGrid({ cards }: CardGridProps) {
+  const [highlightedId, setHighlightedId] = useState<number | null>(null);
+
+  // Set middle card as highlighted on initial load
+  useEffect(() => {
+    if (cards.length > 0) {
+      const middleIndex = Math.floor(cards.length / 2);
+      setHighlightedId(cards[middleIndex].id);
+    }
+  }, [cards]);
+
+  const handleCardClick = (cardId: number) => {
+    setHighlightedId(cardId);
+  };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 place-items-center">
@@ -22,7 +38,8 @@ export default function CardGrid({ cards, highlightedCardId }: CardGridProps) {
           <div key={card.id} className="w-full max-w-sm">
             <Card
               {...card}
-              isHighlighted={card.id === highlightedCardId}
+              isHighlighted={card.id === highlightedId}
+              onButtonClick={() => handleCardClick(card.id)}
             />
           </div>
         ))}
