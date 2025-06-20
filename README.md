@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Automotive Landing Page
+
+Automotive Landing Page built with Next.js 15, React 19, and TypeScript, featuring an interactive card-based UI system for showcasing automotive content.
+
+##  Features
+
+### Card Component System
+- Responsive grid layout with 1/2/3 column configurations
+- Interactive card highlighting system with smooth transitions
+- Flexible card components with customizable headers, bodies, and images
+- Bottom-aligned action buttons with proper spacing
+- Minimum height constraints for consistent layout
+
+### Technical Implementation
+- Built with Next.js 15 and React 19
+- TypeScript for type safety
+- TailwindCSS for styling
+- Jest and React Testing Library for unit testing
+- Axios for API integration
+- Redux Toolkit for state management
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18.0 or higher
+- pnpm (recommended) or npm
 
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Petersonwei/Automotive
+cd automotive
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+pnpm install
+# or
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+pnpm dev
+# or
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Testing
 
-To learn more about Next.js, take a look at the following resources:
+Run the test suite:
+```bash
+pnpm test
+# or
+npm test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Watch mode for development:
+```bash
+pnpm test:watch
+# or
+npm run test:watch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                 # Next.js app directory
+├── components/         # React components
+│   ├── ui/            # Reusable UI components
+│   └── __tests__/     # Component tests
+├── constants/         # Application constants
+├── data/             # Static data and mock API responses
+└── services/         # API services and utilities
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `pnpm dev` - Start development server with Turbopack
+- `pnpm build` - Create production build
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm test` - Run tests
+- `pnpm test:watch` - Run tests in watch mode
+
+## Tech Stack
+
+- **Framework:** Next.js 15.3.4
+- **UI Library:** React 19.0.0
+- **Styling:** TailwindCSS 4
+- **HTTP Client:** Axios
+- **Testing:** Jest & React Testing Library
+- **Icons:** React Icons
+
+## UI Components
+
+### Card System
+The project features a sophisticated card system with:
+- Responsive layouts
+- Interactive highlighting
+- Smooth transitions
+- Accessible design
+- Flexible content areas
+
+### Theme Toggle
+Includes a dark/light mode toggle with system preference detection.
+
+## Responsive Design
+
+The application is fully responsive with breakpoints for:
+- Mobile devices
+- Tablets
+- Desktop screens
+- Large displays
+
+
+
