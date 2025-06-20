@@ -1,34 +1,10 @@
 import HeroSection from '@/components/hero-section';
 import CardGrid from '@/components/card-grid';
+import { getCards } from '@/services/cardService';
 
-const serviceCards = [
-  {
-    id: 1,
-    title: "Vehicle Maintenance",
-    description: "Regular maintenance services to keep your vehicle running smoothly. Our expert technicians use state-of-the-art equipment for all service needs.",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-    buttonText: "Learn More",
-    buttonHref: "/services/maintenance"
-  },
-  {
-    id: 2,
-    title: "Repair Services",
-    description: "Professional repair services for all makes and models. From minor fixes to major repairs, we've got you covered.",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-    buttonText: "View Services",
-    buttonHref: "/services/repairs"
-  },
-  {
-    id: 3,
-    title: "Custom Solutions",
-    description: "Tailored automotive solutions to meet your specific needs. We work with you to understand your requirements and deliver the best results.\n\nOur experienced team provides personalized attention to every project",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-    buttonText: "Get Started",
-    buttonHref: "/services/custom"
-  }
-];
+export default async function Home() {
+  const cards = await getCards();
 
-export default function Home() {
   return (
     <main>
       <HeroSection 
@@ -42,7 +18,7 @@ export default function Home() {
       />
 
       {/* Services Cards Section */}
-      <CardGrid cards={serviceCards} />
+      <CardGrid cards={cards} />
 
       {/* Typography Examples Section */}
       <section className="max-w-4xl mx-auto px-4 py-16">
