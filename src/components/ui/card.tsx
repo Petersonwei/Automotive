@@ -22,7 +22,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div className={`
-      bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden
+      rounded-lg shadow-lg overflow-hidden
       ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
     `}>
       <div className="relative h-48 w-full">
@@ -35,11 +35,11 @@ export default function Card({
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-xl font-semibold mb-2">
           {title}
         </h3>
         
-        <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">
+        <p className="mb-6 line-clamp-3">
           {description}
         </p>
 
