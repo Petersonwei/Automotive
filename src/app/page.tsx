@@ -6,7 +6,7 @@ const serviceCards = [
     id: 1,
     title: "Vehicle Maintenance",
     description: "Regular maintenance services to keep your vehicle running smoothly. Our expert technicians use state-of-the-art equipment for all service needs.",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg",
+    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
     buttonText: "Learn More",
     buttonHref: "/services/maintenance"
   },
@@ -14,7 +14,7 @@ const serviceCards = [
     id: 2,
     title: "Repair Services",
     description: "Professional repair services for all makes and models. From minor fixes to major repairs, we've got you covered.",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg",
+    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
     buttonText: "View Services",
     buttonHref: "/services/repairs"
   },
@@ -22,7 +22,7 @@ const serviceCards = [
     id: 3,
     title: "Custom Solutions",
     description: "Tailored automotive solutions to meet your specific needs. We work with you to understand your requirements and deliver the best results.",
-    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg",
+    imageSrc: "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
     buttonText: "Get Started",
     buttonHref: "/services/custom"
   }
