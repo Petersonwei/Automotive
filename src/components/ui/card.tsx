@@ -21,11 +21,14 @@ export default function Card({
   isHighlighted = false
 }: CardProps) {
   return (
-    <div className={`
-      rounded-lg shadow-lg overflow-hidden min-h-[32rem] flex flex-col
-      ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
-      transition-all duration-300 ease-in-out
-    `}>
+    <div 
+      data-testid="card"
+      className={`
+        rounded-lg shadow-lg overflow-hidden min-h-[32rem] flex flex-col
+        ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
+        transition-all duration-300 ease-in-out
+      `}
+    >
       <div className="relative h-48 w-full">
         <Image
           src={imageSrc}
