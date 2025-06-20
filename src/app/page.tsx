@@ -1,32 +1,17 @@
-import { text as t } from '@/constants/text';
+import HeroSection from '@/components/hero-section';
 
 export default function Home() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="hero-section">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        
-        {/* Overlay - adapts to dark/light mode */}
-        <div className="hero-overlay" />
-
-        {/* Content */}
-        <div className="hero-content">
-          <h1>Welcome to G Automotive</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </div>
-      </section>
+      <HeroSection 
+        title="Welcome to G Automotive"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum."
+        imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
+      />
 
       {/* Typography Examples Section */}
       <section className="max-w-4xl mx-auto px-4 py-16">
