@@ -42,7 +42,7 @@ export default function Home() {
       />
 
       {/* Services Cards Section */}
-      <CardGrid cards={serviceCards} highlightedCardId={2} />
+      <CardGrid cards={serviceCards} />
 
       {/* Typography Examples Section */}
       <section className="max-w-4xl mx-auto px-4 py-16">
