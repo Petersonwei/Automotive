@@ -18,13 +18,14 @@ export default function CardBody({
       <p className="mb-4">
         {description}
       </p>
-      <Button
-        href={buttonHref}
-        onClick={onButtonClick}
-        className="w-full"
-      >
-        {buttonText}
-      </Button>
+      <div className="text-center">
+        <Button
+          href={buttonHref}
+          onClick={onButtonClick}
+        >
+          {buttonText}
+        </Button>
+      </div>
     </div>
   );
 } 
