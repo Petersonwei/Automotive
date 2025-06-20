@@ -21,7 +21,7 @@ export default function TopNav() {
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/') 
             ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-foreground hover:text-blue-500 hover:border-gray-300'
+            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -34,7 +34,7 @@ export default function TopNav() {
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/about') 
             ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-foreground hover:text-blue-500 hover:border-gray-300'
+            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -47,7 +47,7 @@ export default function TopNav() {
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/contact') 
             ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-foreground hover:text-blue-500 hover:border-gray-300'
+            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -57,33 +57,37 @@ export default function TopNav() {
   );
 
   return (
-    <nav className="bg-background">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between h-16 items-center">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:space-x-8">
-            <NavLinks />
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)] border-b border-[var(--text-muted)]/10">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between h-16 items-center">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex md:space-x-8">
+              <NavLinks />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-md text-[var(--text-primary)] hover:text-blue-500"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
+            </button>
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-md text-foreground hover:text-blue-500"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
-          </button>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden py-4 space-y-4 flex flex-col bg-[var(--background)]">
+              <NavLinks />
+            </div>
+          )}
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 flex flex-col">
-            <NavLinks />
-          </div>
-        )}
-      </div>
-    </nav>
+      </nav>
+      {/* Spacer to prevent content from going under the fixed nav */}
+      <div className="h-16" />
+    </>
   );
 }
