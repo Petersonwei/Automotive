@@ -3,22 +3,22 @@ import Link from 'next/link';
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: 'primary' | 'secondary';
   href?: string;
   onClick?: () => void;
   className?: string;
+  variant?: 'primary' | 'secondary';
 }
 
-export default function Button({ 
-  children, 
-  variant = 'primary', 
-  href, 
+export default function Button({
+  children,
+  href,
   onClick,
-  className = ''
+  className = '',
+  variant = 'primary'
 }: ButtonProps) {
-  const baseStyles = "px-6 py-2 rounded-md font-medium transition-colors duration-200 text-center";
+  const baseStyles = "w-full py-3 px-4 rounded-full text-center font-medium transition-colors duration-200";
   const variantStyles = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
+    primary: "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600",
     secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
   };
 
@@ -33,10 +33,7 @@ export default function Button({
   }
 
   return (
-    <button 
-      onClick={onClick} 
-      className={buttonClass}
-    >
+    <button onClick={onClick} className={buttonClass}>
       {children}
     </button>
   );
