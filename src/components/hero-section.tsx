@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Button from './ui/button';
 
 interface HeroSectionProps {
   title: string;
@@ -35,9 +36,14 @@ export default function HeroSection({
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
           {title}
         </h1>
-        <p className="text-lg md:text-xl leading-relaxed text-gray-200">
+        <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-8">
           {description}
         </p>
+        <div className="text-center">
+          <Button href="/contact">
+            Contact Us
+          </Button>
+        </div>
       </div>
     </section>
   );
