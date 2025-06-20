@@ -4,8 +4,6 @@ Automotive Landing Page built with Next.js 15, React 19, and TypeScript, featuri
 
 ##  Features
 
-##  Features
-
 ![image](https://github.com/user-attachments/assets/e9fd8f9e-a83d-4e71-8708-fddb553c3eb6)
 
 - Build the Project using Next JS 15 (ref: https://nextjs.org/docs/app/getting-started/installation)
