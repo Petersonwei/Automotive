@@ -1,6 +1,6 @@
 import CardImage from './card-image';
 import CardHeader from './card-header';
-import CardBody from './CardBody';
+import CardBody from './card-body';
 
 interface CardProps {
   title: string;
