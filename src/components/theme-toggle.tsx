@@ -25,7 +25,10 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="p-2 rounded-md bg-background text-foreground hover:text-blue-500"
     >
-      {isDark ? <MdOutlineLightMode size={20} /> : <MdDarkMode size={20} />}
+      {isDark ? 
+        <MdOutlineLightMode size={20} data-testid="light-icon" /> : 
+        <MdDarkMode size={20} data-testid="dark-icon" />
+      }
     </button>
   );
 } 
