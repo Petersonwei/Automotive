@@ -14,6 +14,8 @@ Automotive Landing Page built with Next.js 15, React 19, and TypeScript, featuri
   Desktop
 ![image](https://github.com/user-attachments/assets/4253093f-5a65-4c2b-89e8-f4f425db62a4)
   Mobile
+![image](https://github.com/user-attachments/assets/912f0785-67f1-4c9e-842a-ebbd542d99ad)
+![image](https://github.com/user-attachments/assets/a2cea080-7d80-48fc-99d5-8a053735a4ae)
 ![image](https://github.com/user-attachments/assets/057eb49a-a278-4298-8539-c9cbba2287bd)
   IPad
 ![image](https://github.com/user-attachments/assets/cb46f50a-21b2-4a14-a6b0-ad6b575d91ad)
