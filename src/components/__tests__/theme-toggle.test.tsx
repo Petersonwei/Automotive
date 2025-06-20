@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react'
-import ThemeToggle from '../ThemeToggle'
+import ThemeToggle from '../theme-toggle'
 
 // Mock the matchMedia function
 Object.defineProperty(window, 'matchMedia', {

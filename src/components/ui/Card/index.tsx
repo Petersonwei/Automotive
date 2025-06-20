@@ -1,5 +1,5 @@
-import CardImage from './CardImage';
-import CardHeader from './CardHeader';
+import CardImage from './card-image';
+import CardHeader from './card-header';
 import CardBody from './CardBody';
 
 interface CardProps {
