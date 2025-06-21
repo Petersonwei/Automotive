@@ -16,7 +16,7 @@ export default function Button({
   className = '',
   variant = 'primary'
 }: ButtonProps) {
-  const baseStyles = "inline-block py-0.5 px-2.5 rounded-full text-center font-bold text-[13px] transition-colors duration-200";
+  const baseStyles = "inline-block py-1.5 px-4 rounded-full text-center font-bold text-[13px] transition-colors duration-200";
   const variantStyles = {
     primary: "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600",
     secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"

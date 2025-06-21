@@ -32,15 +32,17 @@ export default function HeroSection({
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 to-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
-          {title}
-        </h1>
-        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-6">
-          {description}
-        </p>
+      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center text-white">
+        <div className="max-w-[600px] mx-auto">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3">
+            {title}
+          </h1>
+          <p className="text-xs md:text-sm leading-relaxed mb-6">
+            {description}
+          </p>
+        </div>
         <div className="text-center">
-          <Button href="/contact">
+          <Button href="/contact" className="min-w-[120px] !text-white text-[12px]">
             Contact Us
           </Button>
         </div>
