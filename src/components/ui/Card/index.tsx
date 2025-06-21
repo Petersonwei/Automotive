@@ -10,6 +10,7 @@ interface CardProps {
   buttonHref?: string;
   onButtonClick?: () => void;
   isHighlighted?: boolean;
+  'data-testid'?: string;
 }
 
 export default function Card({
@@ -19,10 +20,12 @@ export default function Card({
   buttonText,
   buttonHref,
   onButtonClick,
-  isHighlighted = false
+  isHighlighted = false,
+  'data-testid': testId
 }: CardProps) {
   return (
     <div 
+      data-testid={testId}
       className={`
         rounded-lg overflow-hidden shadow-lg 
         transition-all duration-300 
@@ -33,9 +36,6 @@ export default function Card({
       <CardImage 
         src={imageSrc} 
         alt={title} 
-        buttonText={buttonText}
-        buttonHref={buttonHref}
-        onButtonClick={onButtonClick}
       />
       <CardHeader title={title} />
       <CardBody

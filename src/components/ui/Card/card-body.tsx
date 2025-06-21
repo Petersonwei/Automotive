@@ -13,6 +13,13 @@ export default function CardBody({
   buttonHref,
   onButtonClick
 }: CardBodyProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent navigation if it's a link
+    if (onButtonClick) {
+      onButtonClick();
+    }
+  };
+
   return (
     <div className="px-6 py-4 flex flex-col">
       <p className="text-gray-700 mb-4">
@@ -22,13 +29,14 @@ export default function CardBody({
         {buttonHref ? (
           <a 
             href={buttonHref}
+            onClick={handleClick}
             className="w-full block bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200"
           >
             {buttonText}
           </a>
         ) : (
           <button
-            onClick={onButtonClick}
+            onClick={handleClick}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200"
           >
             {buttonText}
