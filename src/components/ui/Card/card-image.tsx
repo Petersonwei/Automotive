@@ -7,7 +7,7 @@ interface CardImageProps {
 
 export default function CardImage({ src, alt }: CardImageProps) {
   return (
-    <div className="relative h-32 w-full">
+    <div className="relative h-36 w-full flex-shrink-0">
       <Image
         src={src}
         alt={alt}

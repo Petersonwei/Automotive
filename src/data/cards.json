@@ -19,7 +19,7 @@
     {
       "id": 3,
       "title": "Heading 3",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdamhic, autem repudiandae animi quos inventor.\n\nLorem ipsum dolor sit amet consectetur, adipisicing elit.Ipsum molestias accusamus vitae architecto alias.",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdamhic, autem repudiandae animi quos inventor.\n\nLorem ipsum dolorm  sit amet consectetur, adimoleschitecto alias.",
       "imageSrc": "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
       "buttonText": "Button 3",
       "buttonHref": "/services/three"

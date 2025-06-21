@@ -34,7 +34,7 @@ export default function Card({
         boxShadow: '0 0 0 4px #2563eb' 
       } : {}}
     >
-      <div className="rounded-md overflow-hidden shadow-theme h-[320px] w-full flex flex-col">
+      <div className="rounded-md overflow-hidden shadow-theme min-h-[320px] w-full flex flex-col">
         <CardImage 
           src={imageSrc}
           alt={title}
