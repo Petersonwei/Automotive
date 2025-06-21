@@ -29,8 +29,8 @@ export default function Card({
       className={`
         rounded-lg overflow-hidden shadow-lg 
         transition-all duration-300 
-        min-h-[500px] flex flex-col
-        ${isHighlighted ? 'ring-4 ring-blue-600' : ''}
+        min-h-[280px] w-full
+        ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
       `}
     >
       <CardImage 

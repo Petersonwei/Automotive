@@ -13,37 +13,19 @@ export default function CardBody({
   buttonHref,
   onButtonClick
 }: CardBodyProps) {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent navigation if it's a link
-    if (onButtonClick) {
-      onButtonClick();
-    }
-  };
-
-  const buttonClasses = "w-full block bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200 font-bold";
-
   return (
-    <div className="flex-grow flex flex-col p-6 pt-2">
-      <p className="mb-6">
+    <div className="p-4 flex flex-col flex-grow">
+      <p className="text-xs mb-4">
         {description}
       </p>
       <div className="mt-auto">
-        {buttonHref ? (
-          <a 
-            href={buttonHref}
-            onClick={handleClick}
-            className={buttonClasses}
-          >
-            {buttonText}
-          </a>
-        ) : (
-          <button
-            onClick={handleClick}
-            className={buttonClasses}
-          >
-            {buttonText}
-          </button>
-        )}
+        <Button 
+          href={buttonHref}
+          onClick={onButtonClick}
+          className="w-full text-sm py-1.5"
+        >
+          {buttonText}
+        </Button>
       </div>
     </div>
   );

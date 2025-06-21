@@ -15,7 +15,7 @@ export default function HeroSection({
   imageUrl 
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[80vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[50vh] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -33,10 +33,10 @@ export default function HeroSection({
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
           {title}
         </h1>
-        <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-8">
+        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-6">
           {description}
         </p>
         <div className="text-center">
