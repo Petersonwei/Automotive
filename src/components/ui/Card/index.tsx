@@ -22,14 +22,17 @@ export default function Card({
   isHighlighted = false
 }: CardProps) {
   return (
-    <div className="rounded-lg overflow-hidden">
-      <CardImage src={imageSrc} alt={title} />
-      <CardHeader title={title} />
-      <CardBody
-        description={description}
+    <div className="rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02]">
+      <CardImage 
+        src={imageSrc} 
+        alt={title} 
         buttonText={buttonText}
         buttonHref={buttonHref}
         onButtonClick={onButtonClick}
+      />
+      <CardHeader title={title} />
+      <CardBody
+        description={description}
       />
     </div>
   );

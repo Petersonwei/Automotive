@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Card from './ui/card';
+import Card from './ui/Card';
 
 interface CardData {
   id: number;
@@ -36,7 +36,6 @@ export default function CardGrid({ cards }: CardGridProps) {
               {...card}
               isHighlighted={card.id === activeCardId}
               onButtonClick={() => setActiveCardId(card.id)}
-              buttonHref={undefined} // Remove href to ensure click handler works
             />
           </div>
         ))}
