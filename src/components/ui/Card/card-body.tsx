@@ -14,15 +14,19 @@ export default function CardBody({
   onButtonClick
 }: CardBodyProps) {
   return (
-    <div className="p-4 flex flex-col flex-grow">
-      <p className="text-xs mb-4">
-        {description}
-      </p>
+    <div className="px-4 pb-4 flex flex-col h-full">
+      <div className="space-y-3 mb-4">
+        {description.split('\n').map((paragraph, index) => (
+          <p key={index} className="text-[11px] leading-snug">
+            {paragraph}
+          </p>
+        ))}
+      </div>
       <div className="mt-auto">
         <Button 
           href={buttonHref}
           onClick={onButtonClick}
-          className="w-full text-sm py-1.5"
+          className="w-full text-[11px] py-0.5 min-h-0"
         >
           {buttonText}
         </Button>
