@@ -38,9 +38,9 @@ export default function CardGrid({ cards }: CardGridProps) {
         {cards.map((card, index) => (
           <div 
             key={card.id} 
-            className={`w-full max-w-[280px] sm:max-w-none mx-auto ${
+            className={`w-full max-w-[280px] sm:max-w-[320px] lg:max-w-none mx-auto ${
               cards.length % 2 !== 0 && index === cards.length - 1 
-                ? 'sm:col-span-2 lg:col-span-1 sm:mx-auto'
+                ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center'
                 : ''
             }`}
           >
