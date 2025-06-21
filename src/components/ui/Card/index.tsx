@@ -27,7 +27,7 @@ export default function Card({
     <div 
       data-testid={testId}
       className={`
-        rounded-lg overflow-hidden shadow-lg 
+        rounded-lg overflow-hidden shadow-theme 
         transition-all duration-300 
         min-h-[280px] w-full
         ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
