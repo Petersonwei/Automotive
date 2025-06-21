@@ -23,28 +23,33 @@ export default function Card({
   isHighlighted = false,
   'data-testid': testId
 }: CardProps) {
+  console.log(`Card ${title} - isHighlighted:`, isHighlighted);
+  
   return (
     <div 
       data-testid={testId}
       className={`
-        rounded-md overflow-hidden shadow-theme 
-        transition-all duration-300 
-        min-h-[280px] w-full
-        ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
+        ${isHighlighted ? 'ring-4 ring-blue-600' : ''}
+        rounded-md transition-all duration-300
       `}
+      style={isHighlighted ? { 
+        boxShadow: '0 0 0 4px #2563eb' 
+      } : {}}
     >
-      <CardImage 
-        src={imageSrc} 
-        alt={title} 
-      />
-      <div className="flex flex-col flex-grow">
-        <CardHeader title={title} />
-        <CardBody
-          description={description}
-          buttonText={buttonText}
-          buttonHref={buttonHref}
-          onButtonClick={onButtonClick}
+      <div className="rounded-md overflow-hidden shadow-theme min-h-[280px] w-full">
+        <CardImage 
+          src={imageSrc} 
+          alt={title} 
         />
+        <div className="flex flex-col flex-grow">
+          <CardHeader title={title} />
+          <CardBody
+            description={description}
+            buttonText={buttonText}
+            buttonHref={buttonHref}
+            onButtonClick={onButtonClick}
+          />
+        </div>
       </div>
     </div>
   );

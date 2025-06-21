@@ -23,13 +23,20 @@ export default function CardGrid({ cards }: CardGridProps) {
   useEffect(() => {
     if (cards.length > 0) {
       const middleIndex = Math.floor((cards.length - 1) / 2);
-      setActiveCardId(cards[middleIndex].id);
+      const middleCardId = cards[middleIndex].id;
+      console.log('Setting initial active card:', middleCardId);
+      setActiveCardId(middleCardId);
     }
   }, [cards]);
 
   const handleButtonClick = (cardId: number) => {
+    console.log('Button clicked for card:', cardId);
+    console.log('Previous active card:', activeCardId);
     setActiveCardId(cardId);
+    console.log('New active card should be:', cardId);
   };
+
+  console.log('Current activeCardId:', activeCardId);
 
   return (
     <div className="max-w-[800px] mx-auto px-4 py-12">

@@ -24,9 +24,26 @@ export default function Button({
 
   const buttonClass = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
-  if (href) {
+  // If both href and onClick are provided, prioritize onClick for state management
+  if (href && !onClick) {
     return (
       <Link href={href} className={buttonClass}>
+        {children}
+      </Link>
+    );
+  }
+
+  // Handle onClick with optional href
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
+  if (href && onClick) {
+    return (
+      <Link href={href} className={buttonClass} onClick={handleClick}>
         {children}
       </Link>
     );
