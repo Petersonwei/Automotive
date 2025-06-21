@@ -29,8 +29,7 @@ export default function Card({
       className={`
         rounded-lg overflow-hidden shadow-lg 
         transition-all duration-300 
-        hover:shadow-xl
-        ${isHighlighted ? 'ring-2 ring-blue-600' : ''}
+        ${isHighlighted ? 'ring-4 ring-blue-600' : ''}
       `}
     >
       <CardImage 

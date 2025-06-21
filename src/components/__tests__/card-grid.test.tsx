@@ -34,10 +34,10 @@ describe('CardGrid', () => {
     expect(cards).toHaveLength(3);
     
     // Middle card should have highlight class
-    expect(cards[1]).toHaveClass('ring-2 ring-blue-600');
+    expect(cards[1]).toHaveClass('ring-4 ring-blue-600');
     // Other cards should not have highlight
-    expect(cards[0]).not.toHaveClass('ring-2 ring-blue-600');
-    expect(cards[2]).not.toHaveClass('ring-2 ring-blue-600');
+    expect(cards[0]).not.toHaveClass('ring-4 ring-blue-600');
+    expect(cards[2]).not.toHaveClass('ring-4 ring-blue-600');
   });
 
   it('changes highlight when clicking card buttons', () => {
@@ -48,12 +48,12 @@ describe('CardGrid', () => {
     
     // Click first card's button
     fireEvent.click(buttons[0]);
-    expect(cards[0]).toHaveClass('ring-2 ring-blue-600');
-    expect(cards[1]).not.toHaveClass('ring-2 ring-blue-600');
+    expect(cards[0]).toHaveClass('ring-4 ring-blue-600');
+    expect(cards[1]).not.toHaveClass('ring-4 ring-blue-600');
     
     // Click last card's button
     fireEvent.click(buttons[2]);
-    expect(cards[2]).toHaveClass('ring-2 ring-blue-600');
-    expect(cards[0]).not.toHaveClass('ring-2 ring-blue-600');
+    expect(cards[2]).toHaveClass('ring-4 ring-blue-600');
+    expect(cards[0]).not.toHaveClass('ring-4 ring-blue-600');
   });
 }); 
