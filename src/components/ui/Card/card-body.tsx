@@ -15,14 +15,14 @@ export default function CardBody({
 }: CardBodyProps) {
   return (
     <div className="px-4 pb-4 flex flex-col h-full">
-      <div className="space-y-3 mb-4">
+      <div className="space-y-3 mb-4 md:h-[100px]">
         {description.split('\n').map((paragraph, index) => (
-          <p key={index} className="text-[11px] leading-snug">
+          <p key={index} className="text-[10px] md:text-[11px] leading-normal text-justify hyphens-auto">
             {paragraph}
           </p>
         ))}
       </div>
-      <div className="mt-auto">
+      <div className="mt-4">
         <Button 
           href={buttonHref}
           onClick={onButtonClick}
