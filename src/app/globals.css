@@ -70,5 +70,6 @@ body {
 
 /* Custom theme-aware shadow */
 .shadow-theme {
-  box-shadow: 0 10px 15px -3px var(--foreground), 0 4px 6px -4px var(--foreground);
+  box-shadow: 0 10px 15px -2px color-mix(in srgb, var(--foreground) 20%, transparent), 
+              0 5px 10px -2px color-mix(in srgb, var(--foreground) 18%, transparent);
 }
