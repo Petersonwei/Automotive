@@ -10,6 +10,15 @@ interface CardImageProps {
 }
 
 export default function CardImage({ src, alt, buttonText = "Learn More", buttonHref, onButtonClick }: CardImageProps) {
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onButtonClick) {
+      onButtonClick();
+    }
+  };
+
+  const buttonClasses = "w-[80%] bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200";
+
   return (
     <div className="relative w-full h-48 group">
       <Image
@@ -23,14 +32,15 @@ export default function CardImage({ src, alt, buttonText = "Learn More", buttonH
         {buttonHref ? (
           <Link 
             href={buttonHref}
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md transition-colors duration-200"
+            className={buttonClasses}
+            onClick={handleButtonClick}
           >
             {buttonText}
           </Link>
         ) : (
           <button
-            onClick={onButtonClick}
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md transition-colors duration-200"
+            onClick={handleButtonClick}
+            className={buttonClasses}
           >
             {buttonText}
           </button>
