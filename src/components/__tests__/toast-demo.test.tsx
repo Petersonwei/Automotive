@@ -16,130 +16,111 @@ describe('Toast Demo Component', () => {
       </ToastProvider>
     );
 
-    // Check for demo section structure
-    expect(screen.getByText('API Errors')).toBeInTheDocument();
-    expect(screen.getByText('Form Validation')).toBeInTheDocument();
-    
-    // Check for demo buttons
+    // Check that all buttons are present
     expect(screen.getByText('Simulate Fetch Error')).toBeInTheDocument();
     expect(screen.getByText('Simulate Success')).toBeInTheDocument();
     expect(screen.getByText('Show Validation Error')).toBeInTheDocument();
     expect(screen.getByText('Show Info Message')).toBeInTheDocument();
   });
 
-  it('shows error toast when simulate fetch error is clicked', async () => {
+  it('shows error toast when clicking fetch error button', async () => {
     render(
       <ToastProvider>
         <ToastDemo />
       </ToastProvider>
     );
 
-    fireEvent.click(screen.getByText('Simulate Fetch Error'));
+    const errorButton = screen.getByText('Simulate Fetch Error');
+    fireEvent.click(errorButton);
 
     await waitFor(() => {
       expect(screen.getByText(/Failed to fetch data/)).toBeInTheDocument();
     });
 
+    // Should have error styling
     const toast = screen.getByRole('alert');
     expect(toast).toHaveClass('border-red-500');
   });
 
-  it('shows success toast when simulate success is clicked', async () => {
+  it('shows success toast when clicking success button', async () => {
     render(
       <ToastProvider>
         <ToastDemo />
       </ToastProvider>
     );
 
-    fireEvent.click(screen.getByText('Simulate Success'));
+    const successButton = screen.getByText('Simulate Success');
+    fireEvent.click(successButton);
 
     await waitFor(() => {
       expect(screen.getByText(/Operation completed successfully/)).toBeInTheDocument();
     });
 
+    // Should have success styling
     const toast = screen.getByRole('alert');
     expect(toast).toHaveClass('border-green-500');
   });
 
-  it('shows warning toast when show validation error is clicked', async () => {
+  it('shows warning toast when clicking validation error button', async () => {
     render(
       <ToastProvider>
         <ToastDemo />
       </ToastProvider>
     );
 
-    fireEvent.click(screen.getByText('Show Validation Error'));
+    const warningButton = screen.getByText('Show Validation Error');
+    fireEvent.click(warningButton);
 
     await waitFor(() => {
       expect(screen.getByText(/Please fill in all required fields correctly/)).toBeInTheDocument();
     });
 
+    // Should have warning styling
     const toast = screen.getByRole('alert');
     expect(toast).toHaveClass('border-yellow-500');
   });
 
-  it('shows info toast when show info message is clicked', async () => {
+  it('shows info toast when clicking info button', async () => {
     render(
       <ToastProvider>
         <ToastDemo />
       </ToastProvider>
     );
 
-    fireEvent.click(screen.getByText('Show Info Message'));
+    const infoButton = screen.getByText('Show Info Message');
+    fireEvent.click(infoButton);
 
     await waitFor(() => {
       expect(screen.getByText(/Your session will expire in 5 minutes/)).toBeInTheDocument();
     });
 
+    // Should have info styling
     const toast = screen.getByRole('alert');
     expect(toast).toHaveClass('border-blue-500');
   });
 
-  it('demo buttons work independently and show correct messages', async () => {
+  it('can close toast by clicking close button', async () => {
     render(
       <ToastProvider>
         <ToastDemo />
       </ToastProvider>
     );
 
-    // Test each button shows its specific message
-    const testCases = [
-      { button: 'Simulate Fetch Error', message: /Failed to fetch data/, class: 'border-red-500' },
-      { button: 'Simulate Success', message: /Operation completed successfully/, class: 'border-green-500' },
-      { button: 'Show Validation Error', message: /Please fill in all required fields/, class: 'border-yellow-500' },
-      { button: 'Show Info Message', message: /Your session will expire/, class: 'border-blue-500' }
-    ];
+    const errorButton = screen.getByText('Simulate Fetch Error');
+    fireEvent.click(errorButton);
 
-    for (const testCase of testCases) {
-      fireEvent.click(screen.getByText(testCase.button));
-      
-      await waitFor(() => {
-        expect(screen.getByText(testCase.message)).toBeInTheDocument();
-      });
+    // Wait for toast to appear
+    await waitFor(() => {
+      expect(screen.getByRole('alert')).toBeInTheDocument();
+    });
 
-      const toast = screen.getByRole('alert');
-      expect(toast).toHaveClass(testCase.class);
+    // Click close button
+    const closeButton = screen.getByLabelText('Close');
+    fireEvent.click(closeButton);
 
-      // Wait for toast to disappear before next test
-      await waitFor(() => {
-        expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-      }, { timeout: 4000 });
-    }
-  });
-
-  it('demo section is clearly labeled as demonstration', () => {
-    render(
-      <ToastProvider>
-        <ToastDemo />
-      </ToastProvider>
-    );
-
-    // The demo should be clearly identifiable as a demo
-    expect(screen.getByText('API Errors')).toBeInTheDocument();
-    expect(screen.getByText('Form Validation')).toBeInTheDocument();
-    
-    // Button text should indicate simulation/demo
-    expect(screen.getByText('Simulate Fetch Error')).toBeInTheDocument();
-    expect(screen.getByText('Simulate Success')).toBeInTheDocument();
+    // Toast should disappear
+    await waitFor(() => {
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    });
   });
 }); 

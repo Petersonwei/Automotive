@@ -23,8 +23,6 @@ export default function Card({
   isHighlighted = false,
   'data-testid': testId
 }: CardProps) {
-  console.log(`Card ${title} - isHighlighted:`, isHighlighted);
-  
   return (
     <div 
       data-testid={testId}
@@ -38,8 +36,8 @@ export default function Card({
     >
       <div className="rounded-md overflow-hidden shadow-theme min-h-[280px] w-full">
         <CardImage 
-          src={imageSrc} 
-          alt={title} 
+          src={imageSrc}
+          alt={title}
         />
         <div className="flex flex-col flex-grow">
           <CardHeader title={title} />
