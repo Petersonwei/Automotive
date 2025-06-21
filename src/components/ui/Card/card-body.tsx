@@ -20,9 +20,11 @@ export default function CardBody({
     }
   };
 
+  const buttonClasses = "w-full block bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200 font-bold";
+
   return (
-    <div className="px-6 py-4 flex flex-col">
-      <p className="text-gray-700 mb-4">
+    <div className="flex-grow flex flex-col p-6 pt-2">
+      <p className="mb-6">
         {description}
       </p>
       <div className="mt-auto">
@@ -30,14 +32,14 @@ export default function CardBody({
           <a 
             href={buttonHref}
             onClick={handleClick}
-            className="w-full block bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200"
+            className={buttonClasses}
           >
             {buttonText}
           </a>
         ) : (
           <button
             onClick={handleClick}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-center transition-colors duration-200"
+            className={buttonClasses}
           >
             {buttonText}
           </button>

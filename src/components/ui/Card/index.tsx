@@ -29,6 +29,7 @@ export default function Card({
       className={`
         rounded-lg overflow-hidden shadow-lg 
         transition-all duration-300 
+        min-h-[500px] flex flex-col
         ${isHighlighted ? 'ring-4 ring-blue-600' : ''}
       `}
     >
@@ -36,13 +37,15 @@ export default function Card({
         src={imageSrc} 
         alt={title} 
       />
-      <CardHeader title={title} />
-      <CardBody
-        description={description}
-        buttonText={buttonText}
-        buttonHref={buttonHref}
-        onButtonClick={onButtonClick}
-      />
+      <div className="flex flex-col flex-grow">
+        <CardHeader title={title} />
+        <CardBody
+          description={description}
+          buttonText={buttonText}
+          buttonHref={buttonHref}
+          onButtonClick={onButtonClick}
+        />
+      </div>
     </div>
   );
 }
