@@ -14,7 +14,7 @@ export default function CardImage({ src, alt }: CardImageProps) {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <span className="text-xs text-white font-medium">
           Learn More
         </span>
