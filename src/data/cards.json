@@ -2,27 +2,27 @@
   "cards": [
     {
       "id": 1,
-      "title": "Vehicle Maintenance",
-      "description": "Regular maintenance services to keep your vehicle running smoothly. Our expert technicians use state-of-the-art equipment for all service needs.",
+      "title": "Heading 1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Expedita vel at ut, ducimus accusantium, consequuntur sapiente sit inventore commodi deleniti",
       "imageSrc": "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-      "buttonText": "Learn More",
-      "buttonHref": "/services/maintenance"
+      "buttonText": "Button 1",
+      "buttonHref": "/services/one"
     },
     {
       "id": 2,
-      "title": "Repair Services",
-      "description": "Professional repair services for all makes and models. From minor fixes to major repairs, we've got you covered.",
+      "title": "Heading 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impeditiodit delectus distinctio qui nostrum? Minima iusto facilis nam doloribus enim. Veritatis aliquam itaque.",
       "imageSrc": "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-      "buttonText": "View Services",
-      "buttonHref": "/services/repairs"
+      "buttonText": "Button 2",
+      "buttonHref": "/services/two"
     },
     {
       "id": 3,
-      "title": "Custom Solutions",
-      "description": "Tailored automotive solutions to meet your specific needs. We work with you to understand your requirements and deliver the best results.\n\nOur experienced team provides personalized attention to every project",
+      "title": "Heading 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdamhic, autem repudiandae animi quos inventor.\n\nLorem ipsum dolor sit amet consectetur, adipisicing elit.Ipsum molestias accusamus vitae architecto alias.",
       "imageSrc": "https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg",
-      "buttonText": "Get Started",
-      "buttonHref": "/services/custom"
+      "buttonText": "Button 3",
+      "buttonHref": "/services/three"
     }
   ]
 } 
