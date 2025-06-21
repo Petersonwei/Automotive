@@ -39,7 +39,9 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection
-        title="Welcome to G Automotive"
+        title="Welcome to
+G
+Automotive"
         description="Experience excellence in automotive care. We specialize in comprehensive vehicle services, from routine maintenance to advanced repairs. Our team of certified technicians combines cutting-edge technology with years of expertise to keep your vehicle performing at its best. Whether you drive a family SUV, a luxury sedan, or a rugged pickup, we're committed to providing exceptional service that you can trust."
         imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
       />
