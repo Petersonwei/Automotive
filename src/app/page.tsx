@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import HeroSection from '@/components/hero-section';
 import CardGrid from '@/components/card-grid';
 import ToastDemo from '@/components/toast-demo';
+import Loading from './loading';
 import { useToast } from '@/components/ui/toast-context';
 import { getCards, Card } from '@/services/cardService';
 
@@ -32,19 +33,7 @@ export default function HomePage() {
   }, [showToast]);
 
   if (loading) {
-    return (
-      <main>
-        <HeroSection
-          title="Welcome to G Automotive"
-          description="Experience excellence in automotive care. We specialize in comprehensive vehicle services, from routine maintenance to advanced repairs. Our team of certified technicians combines cutting-edge technology with years of expertise to keep your vehicle performing at its best. Whether you drive a family SUV, a luxury sedan, or a rugged pickup, we're committed to providing exceptional service that you can trust."
-          imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
-        />
-        
-        <div className="max-w-[800px] mx-auto px-4 py-12 text-center">
-          <p>Loading services...</p>
-        </div>
-      </main>
-    );
+    return <Loading />;
   }
 
   return (

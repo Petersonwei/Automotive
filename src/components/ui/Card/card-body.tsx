@@ -15,7 +15,7 @@ export default function CardBody({
 }: CardBodyProps) {
   return (
     <div className="px-4 pb-4 flex flex-col h-full">
-      <div className="space-y-2.5 mb-4 min-h-[100px]">
+      <div className="space-y-2.5 mb-4 min-h-[100px] flex-grow">
         {description.split('\n').map((paragraph, index) => (
           <p key={index} className="text-[11px] leading-relaxed text-justify hyphens-auto">
             {paragraph}
