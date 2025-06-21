@@ -17,21 +17,18 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Simulate API call with artificial delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Simulate processing delay
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      // Here you would typically send the data to your backend
-      // For now, we'll simulate a successful submission
-      console.log('Form data:', data);
-      
-      // Show success toast
-      showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+      // Show success message - no actual sending required
+      console.log('Form data (not sent):', data);
+      showToast('Message received! We\'ll get back to you soon.', 'success');
       
       // Reset form
       reset();
     } catch (error) {
-      // Show error toast
-      showToast('Failed to send message. Please try again later.', 'error');
+      // This shouldn't happen in this simplified version, but keeping for safety
+      showToast('Something went wrong. Please try again.', 'error');
     }
   };
 

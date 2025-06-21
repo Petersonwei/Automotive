@@ -1,9 +1,52 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import HeroSection from '@/components/hero-section';
 import CardGrid from '@/components/card-grid';
 import ToastDemo from '@/components/toast-demo';
-import { cards } from '@/data/cards.json';
+import { useToast } from '@/components/ui/toast-context';
+import { getCards, Card } from '@/services/cardService';
 
 export default function HomePage() {
+  const [cards, setCards] = useState<Card[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { showToast } = useToast();
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        setLoading(true);
+        const cardData = await getCards();
+        setCards(cardData);
+      } catch (error) {
+        console.error('Failed to fetch cards:', error);
+        showToast('Failed to load content. Please refresh the page to try again.', 'error');
+        // Fallback to empty array or default cards
+        setCards([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCards();
+  }, [showToast]);
+
+  if (loading) {
+    return (
+      <main>
+        <HeroSection
+          title="Welcome to G Automotive"
+          description="Experience excellence in automotive care. We specialize in comprehensive vehicle services, from routine maintenance to advanced repairs. Our team of certified technicians combines cutting-edge technology with years of expertise to keep your vehicle performing at its best. Whether you drive a family SUV, a luxury sedan, or a rugged pickup, we're committed to providing exceptional service that you can trust."
+          imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
+        />
+        
+        <div className="max-w-[800px] mx-auto px-4 py-12 text-center">
+          <p>Loading services...</p>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <HeroSection
@@ -12,7 +55,14 @@ export default function HomePage() {
         imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg"
       />
       
-      <CardGrid cards={cards} />
+      {cards.length > 0 ? (
+        <CardGrid cards={cards} />
+      ) : (
+        <div className="max-w-[800px] mx-auto px-4 py-12 text-center">
+          <h2>Services Currently Unavailable</h2>
+          <p>We're having trouble loading our services. Please try refreshing the page.</p>
+        </div>
+      )}
 
       {/* Typography Examples Section */}
       <section className="max-w-4xl mx-auto px-4 py-16">
