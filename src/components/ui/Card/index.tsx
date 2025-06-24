@@ -27,12 +27,9 @@ export default function Card({
     <div 
       data-testid={testId}
       className={`
-        ${isHighlighted ? 'ring-4 ring-blue-600' : ''}
+        ${isHighlighted ? 'ring-4 ring-[var(--primary)]' : ''}
         rounded-md transition-all duration-300
       `}
-      style={isHighlighted ? { 
-        boxShadow: '0 0 0 4px #2563eb' 
-      } : {}}
     >
       <div className="rounded-md overflow-hidden shadow-theme min-h-[320px] w-full flex flex-col">
         <CardImage 

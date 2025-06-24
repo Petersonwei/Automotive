@@ -20,8 +20,8 @@ export default function TopNav() {
         href="/"
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/') 
-            ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
+            ? 'text-[var(--primary)] border-b-2 border-[var(--primary)]' 
+            : 'text-[var(--text-primary)] hover:text-[var(--primary)] hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -33,8 +33,8 @@ export default function TopNav() {
         href="/about"
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/about') 
-            ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
+            ? 'text-[var(--primary)] border-b-2 border-[var(--primary)]' 
+            : 'text-[var(--text-primary)] hover:text-[var(--primary)] hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -46,8 +46,8 @@ export default function TopNav() {
         href="/contact"
         className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
           isActive('/contact') 
-            ? 'text-blue-600 border-b-2 border-blue-600' 
-            : 'text-[var(--text-primary)] hover:text-blue-500 hover:border-gray-300'
+            ? 'text-[var(--primary)] border-b-2 border-[var(--primary)]' 
+            : 'text-[var(--text-primary)] hover:text-[var(--primary)] hover:border-gray-300'
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -58,7 +58,7 @@ export default function TopNav() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)] border-b border-[var(--text-muted)]/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)] border-b border-[var(--border)]">
         <div className="container mx-auto px-4">
           <div className="flex justify-between h-16 items-center">
             {/* Desktop Navigation */}
@@ -68,7 +68,7 @@ export default function TopNav() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-md text-[var(--text-primary)] hover:text-blue-500"
+              className="md:hidden p-2 rounded-md text-[var(--text-primary)] hover:text-[var(--primary)]"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
@@ -80,7 +80,7 @@ export default function TopNav() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 space-y-4 flex flex-col bg-[var(--background)]">
+            <div className="md:hidden py-4 space-y-4 flex flex-col bg-background">
               <NavLinks />
             </div>
           )}

@@ -42,7 +42,7 @@ export default function HeroSection({
           </p>
         </div>
         <div className="text-center">
-          <Button href="/contact" className="min-w-[120px] !text-white text-[12px]">
+          <Button href="/contact" className="min-w-[120px] text-[12px]">
             Contact Us
           </Button>
         </div>

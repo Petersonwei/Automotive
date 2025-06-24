@@ -7,12 +7,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-primary: #374151;  /* Primary text color */
+  --text-muted: #6b7280;    /* Muted/secondary text */
+  --border: #e5e7eb;        /* Border color */
+  --primary: #2563eb;       /* Primary brand color (blue-600) */
+  --primary-hover: #1d4ed8; /* Primary hover state (blue-700) */
+  --button-bg: #2563eb;     /* Button background - BLUE in light mode */
+  --button-text: #ffffff;   /* Button text - WHITE in light mode */
 }
 
 /* .dark class overrides the variables when dark mode is active */
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --text-primary: #d1d5db;  /* Light gray for dark mode */
+  --text-muted: #9ca3af;    /* Lighter muted text */
+  --border: #374151;        /* Darker border */
+  --primary: #3b82f6;       /* Lighter blue for dark mode (blue-500) */
+  --primary-hover: #2563eb; /* Blue-600 for hover */
+  --button-bg: #ffffff;     /* Button background - WHITE in dark mode */
+  --button-text: #2563eb;   /* Button text - BLUE in dark mode */
 }
 
 /* Apply theme variables */
